@@ -1,0 +1,32 @@
+name: Update WordPress listing
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: wordpress-org-investbeacon-release
+  cancel-in-progress: false
+jobs:
+  listing:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out listing metadata
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Validate approved release
+        run: |
+          python3 -m unittest -v test_publish.py
+          python3 publish_wordpress.py
+      - name: Install SVN
+        run: |
+          if ! command -v svn >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y subversion
+          fi
+      - name: Update and verify directory links
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        run: python3 update_listing.py
