@@ -2,7 +2,9 @@
 
 Compound growth, ongoing fee impact and inflation calculators for WordPress. Calculations run in the visitor's browser. No API key or account is required.
 
-Website: https://investbeacon.eu/
+Website: [InvestBeacon](https://investbeacon.eu/)
+
+[WordPress.org plugin](https://wordpress.org/plugins/investbeacon-investment-calculators/) | [Contact InvestBeacon](https://investbeacon.eu/en/contact)
 
 WordPress.org slug: `investbeacon-investment-calculators`
 
@@ -13,6 +15,10 @@ The included ZIP is the exact artifact accepted during WordPress.org review. It 
 Install the ZIP through WordPress → Plugins → Add New → Upload Plugin. Add the Investment Calculator block, or use `[investbeacon_calculator]`. See the bundled readme for the full set of shortcodes and assumptions.
 
 Illustrative estimates, not investment advice. Actual returns vary and losses are possible. Public credit links are optional and off by default.
+
+## Directory links
+
+The directory description and support FAQ include clickable links to InvestBeacon. `listing-readme.txt` is the readme-only metadata update for release 1.0.1. The original reviewed ZIP is preserved. The Update WordPress listing workflow changes only the readme in trunk and the active stable tag, after checking all runtime files against the reviewed archive.
 
 ## Browser-only publication
 
